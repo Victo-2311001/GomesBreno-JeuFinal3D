@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedf95af38f1718488870324f92b745b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FaceACamera
+  cameraJeu: {fileID: 415288357878757936, guid: 15d8cfd1eaeb544419a071a18c231783, type: 3}
 --- !u!114 &1986169608114321048
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -275,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Arme
   balleSpawner: {fileID: 6597961594573960068}
   ballePrefab: {fileID: 4550587443194438838, guid: 66db8a0af42330a44b3340d8125be9eb, type: 3}
-  balleVitesse: 10000
+  balleVitesse: 7000
   degat: 10
 --- !u!1 &4575136466524047605
 GameObject:

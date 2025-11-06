@@ -18,29 +18,30 @@ public class Ennemi : MonoBehaviour, TuableParBalle
     [SerializeField, Tooltip("La destination que l'ennemi vas se déplacer")]
     private GameObject Destination;
 
-    [SerializeField, Tooltip("Gère l'affichage de la vie du monstre.")]
+    [SerializeField, Tooltip("Gère l'affichage de la vie de l'ennemi.")]
     private BarreVie barreVie;
 
-    [SerializeField, Tooltip("Vie maximale (et initiale) du monstre.")]
+    [SerializeField, Tooltip("Vie maximale (et initiale)  de l'ennemi.")]
     private float vieMaximale;
 
     private float vie;
 
-
-    void Start()
+    private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         controleurAnimation = GetComponent<Animator>();
         agent.speed = vitesse;
         agent.SetDestination(Destination.transform.position);
+        vie = vieMaximale;
     }
+
 
     public void RecevoirBalle(Balle balle)
     {
         vie -= balle.Degat;
+        Debug.Log("Ayoye vie =" + vie);
         //controleurAnimation = "take damage";
         barreVie.SetProgression(vie / vieMaximale);
-        Debug.Log("Ayoye vie =" + vie);
 
         if (vie < 0)
         {

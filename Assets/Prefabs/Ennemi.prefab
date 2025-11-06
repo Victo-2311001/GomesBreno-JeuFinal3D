@@ -2712,8 +2712,8 @@ Transform:
   m_GameObject: {fileID: 7665111375569542895}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19781, y: -2.524, z: -0.89725}
-  m_LocalScale: {x: 3.6277103, y: 3.6277103, z: 3.6277103}
+  m_LocalPosition: {x: -0.039457, y: -0.50351, z: -0.17899}
+  m_LocalScale: {x: 1.524255, y: 1.524255, z: 1.524255}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8935723381437706913}
@@ -2757,10 +2757,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac1804e54d09f644b8b6b1cbace5756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ennemi
-  vitesse: 10
+  vitesse: 1
   Destination: {fileID: 6645500027422497210, guid: 27e2d43d726c6494cadb3f097c264c7c, type: 3}
-  barreVie: {fileID: 0}
-  vieMaximale: 20
+  barreVie: {fileID: 9135518881081507195}
+  vieMaximale: 50
 --- !u!195 &2068079825335692327
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2829,8 +2829,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.47284636, y: 1.7438027, z: 0.36487523}
-  m_Center: {x: -0.0031757595, y: 0.87294465, z: 0.044458486}
+  m_Size: {x: 0.68321306, y: 1.7438027, z: 0.49696568}
+  m_Center: {x: 0.009054909, y: 0.87294465, z: -0.021586763}
 --- !u!1 &7716175868536261842
 GameObject:
   m_ObjectHideFlags: 0
@@ -3393,17 +3393,63 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1986169608114321048, guid: ba9bdd8f6194ecc4cbae2f7aa6ff5e44, type: 3}
+      propertyPath: barre
+      value: 
+      objectReference: {fileID: 3529251395326571415}
     - target: {fileID: 3442142115507481417, guid: ba9bdd8f6194ecc4cbae2f7aa6ff5e44, type: 3}
       propertyPath: m_Name
       value: BarreProgression
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659367205710371582, guid: ba9bdd8f6194ecc4cbae2f7aa6ff5e44, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173805930364663924, guid: ba9bdd8f6194ecc4cbae2f7aa6ff5e44, type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173805930364663924, guid: ba9bdd8f6194ecc4cbae2f7aa6ff5e44, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173805930364663924, guid: ba9bdd8f6194ecc4cbae2f7aa6ff5e44, type: 3}
+      propertyPath: m_FillMethod
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173805930364663924, guid: ba9bdd8f6194ecc4cbae2f7aa6ff5e44, type: 3}
+      propertyPath: m_FillOrigin
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba9bdd8f6194ecc4cbae2f7aa6ff5e44, type: 3}
+--- !u!114 &3529251395326571415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6173805930364663924, guid: ba9bdd8f6194ecc4cbae2f7aa6ff5e44, type: 3}
+  m_PrefabInstance: {fileID: 7302490835254774755}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!224 &7989031728401438095 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 831220611733347948, guid: ba9bdd8f6194ecc4cbae2f7aa6ff5e44, type: 3}
   m_PrefabInstance: {fileID: 7302490835254774755}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9135518881081507195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1986169608114321048, guid: ba9bdd8f6194ecc4cbae2f7aa6ff5e44, type: 3}
+  m_PrefabInstance: {fileID: 7302490835254774755}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a36f90f50aacb42bdde200d3c34ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BarreVie

@@ -1,4 +1,4 @@
-//Source: https://github.com/Cours-Alexandre-Ouellet/demo-rpg
+//Inspiré: https://github.com/Cours-Alexandre-Ouellet/demo-rpg
 
 using UnityEngine;
 
@@ -8,14 +8,8 @@ using UnityEngine;
 /// </summary>
 public class FaceACamera : MonoBehaviour
 {
-    // Camera du jeu vers laquelle l'objet doit toujours faire face.
-    private GameObject cameraJeu;
-
-    void Start()
-    {
-        // Récupère la caméra principale du jeu
-        cameraJeu = FindFirstObjectByType<Camera>().gameObject;
-    }
+    [SerializeField]
+    private Camera cameraJeu;
 
     private void LateUpdate()
     {
