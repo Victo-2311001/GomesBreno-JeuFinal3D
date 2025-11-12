@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 6443635531701263190}
   - component: {fileID: 9073891561347405711}
   m_Layer: 0
-  m_Name: Arme
+  m_Name: ArmeJoueur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
