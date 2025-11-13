@@ -13,6 +13,9 @@ public class Arme : MonoBehaviour
     private float balleVitesse;
 
     [SerializeField]
+    private Animator animation;
+
+    [SerializeField]
     private float degat;
     public float Degat => degat;
 
@@ -34,6 +37,7 @@ public class Arme : MonoBehaviour
 
             var balle = Instantiate(ballePrefab, balleSpawner.position, balleSpawner.rotation);
             balle.GetComponent<Rigidbody>().linearVelocity = balleSpawner.forward * (balleVitesse * 2) * Time.deltaTime;
+            animation.SetTrigger("Tirer");
 
             Debug.Log("FEU");
 

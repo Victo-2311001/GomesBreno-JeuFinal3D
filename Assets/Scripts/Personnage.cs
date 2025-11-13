@@ -7,7 +7,6 @@ public class Personnage : MonoBehaviour
     //Dernière valeur saisie dans les contrôles de déplacement
     private Vector2 controleDeplacement;
 
-
     [SerializeField, Tooltip("La vitesse du personnage en m/s")]
     private float vitesse;
 

@@ -45,11 +45,11 @@ public class PouleTourelle : MonoBehaviour
     [SerializeField]
     private GameObject arme2;
 
-    private string armeActif = "Arme1";
-    private Transform balleSpawnerActif;
-
     [SerializeField]
     private Transform balleSpawnerArme2;
+
+    private string armeActif = "Arme1";
+    private Transform balleSpawnerActif;
 
     private Ennemi cibleActive;
     private bool peutTirer = true;
@@ -72,14 +72,13 @@ public class PouleTourelle : MonoBehaviour
     void Update()
     {
         RegarderCible();
-
+        ChangerArme();
 
         if (cibleActive != null && peutTirer)
         {
             DemarrerTire();
         }
         
-        ChangerArme();
     }
 
     private Ennemi PrendreProchaineCible()
@@ -117,6 +116,8 @@ public class PouleTourelle : MonoBehaviour
 
     private IEnumerator Tirer()
     {
+        Balle balle;
+
         peutTirer = false;
 
         if (armeActif == "Arme1")
@@ -128,15 +129,15 @@ public class PouleTourelle : MonoBehaviour
             balleSpawnerActif = balleSpawnerArme2;
         }
 
-        Balle balle = Instantiate(prefabBalle, balleSpawnerActif.position, balleSpawnerActif.rotation);
+     
+        balle = Instantiate(prefabBalle, balleSpawnerActif.position, balleSpawnerActif.rotation);
         balle.GetComponent<Rigidbody>().linearVelocity = balleSpawnerActif.forward * (balleVitesse * 2) * Time.deltaTime;
 
+        Destroy(balle, 2f);
 
         yield return new WaitForSeconds(tempsAvantProchainTire);
 
         peutTirer = true;
-
-        Destroy(balle, 2f);
     }
 
     private void ChangerArme()
