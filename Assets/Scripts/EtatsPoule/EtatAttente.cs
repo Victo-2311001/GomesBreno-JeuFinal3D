@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class EtatAttente : MonoBehaviour
+public class EtatAttente : EtatPoule
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override EtatPoule ExecuterEtat(PouleTourelle poule)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        throw new System.NotImplementedException();
     }
 }

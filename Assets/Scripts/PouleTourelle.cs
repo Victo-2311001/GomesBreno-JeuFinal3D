@@ -11,7 +11,12 @@ using UnityEngine.UIElements;
 public class PouleTourelle : MonoBehaviour
 {
     [SerializeField]
+    private float vieMaximale;
+
     private float vie;
+
+    [SerializeField]
+    private float niveauPoule;
 
     [SerializeField]
     private float tempsAvantProchainTire;
@@ -23,9 +28,6 @@ public class PouleTourelle : MonoBehaviour
     private float vitesseRotation;
 
     [SerializeField]
-    private Transform balleSpawner;
-
-    [SerializeField]
     private Balle prefabBalle;
 
     [SerializeField]
@@ -34,9 +36,39 @@ public class PouleTourelle : MonoBehaviour
     [SerializeField]
     private List<Ennemi> cibles = new List<Ennemi>();
 
+    [SerializeField]
+    private GameObject arme1;
+
+    [SerializeField]
+    private Transform balleSpawnerArme1;
+
+    [SerializeField]
+    private GameObject arme2;
+
+    private string armeActif = "Arme1";
+    private Transform balleSpawnerActif;
+
+    [SerializeField]
+    private Transform balleSpawnerArme2;
+
     private Ennemi cibleActive;
     private bool peutTirer = true;
 
+    private EtatPoule etatPrecedent;
+    private EtatPoule prochainEtat;
+    private bool executerEtat;
+
+
+    private void Awake()
+    {
+        etatPrecedent = null;
+        prochainEtat = new EtatPatrouille();
+        executerEtat = true;
+
+        arme2.SetActive(false);
+
+        vie = vieMaximale;
+    }
     void Update()
     {
         RegarderCible();
@@ -44,8 +76,10 @@ public class PouleTourelle : MonoBehaviour
 
         if (cibleActive != null && peutTirer)
         {
-            StartCoroutine(TirerEnBoucle());
+            DemarrerTire();
         }
+        
+        ChangerArme();
     }
 
     private Ennemi PrendreProchaineCible()
@@ -76,24 +110,43 @@ public class PouleTourelle : MonoBehaviour
         }
     }
 
-    public void TirerEnBoucle()
+    public void DemarrerTire()
     {
-        peutTirer = false;
-
-        Tirer();
-
         StartCoroutine(Tirer());
-
-        peutTirer = true;
     }
 
     private IEnumerator Tirer()
     {
-        Balle balle = Instantiate(prefabBalle, balleSpawner.position, balleSpawner.rotation);
-        balle.GetComponent<Rigidbody>().linearVelocity = balleSpawner.forward * (balleVitesse * 2) * Time.deltaTime;
+        peutTirer = false;
+
+        if (armeActif == "Arme1")
+        {
+            balleSpawnerActif = balleSpawnerArme1;
+        }
+        else
+        {
+            balleSpawnerActif = balleSpawnerArme2;
+        }
+
+        Balle balle = Instantiate(prefabBalle, balleSpawnerActif.position, balleSpawnerActif.rotation);
+        balle.GetComponent<Rigidbody>().linearVelocity = balleSpawnerActif.forward * (balleVitesse * 2) * Time.deltaTime;
+
+
         yield return new WaitForSeconds(tempsAvantProchainTire);
 
+        peutTirer = true;
+
         Destroy(balle, 2f);
+    }
+
+    private void ChangerArme()
+    {
+        if (niveauPoule == 3)
+        {
+            arme1.SetActive(false);
+            arme2.SetActive(true);
+            armeActif = "Arme2";
+        }
     }
 }
 

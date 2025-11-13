@@ -232,6 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6344928101048904853}
   - component: {fileID: 1245539564391499065}
+  - component: {fileID: 4580966146559862233}
   m_Layer: 0
   m_Name: Poule
   m_TagString: Untagged
@@ -281,6 +282,28 @@ CapsuleCollider:
   m_Height: 0.5513248
   m_Direction: 1
   m_Center: {x: -0.0065612793, y: 0.24545285, z: -0.014547735}
+--- !u!114 &4580966146559862233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812562848615466319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270e56ffc7b93d948ab796c5b644bb10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PouleTourelle
+  vieMaximale: 0
+  tempsAvantProchainTire: 0
+  pivotPoule: {fileID: 0}
+  vitesseRotation: 0
+  balleSpawner: {fileID: 0}
+  prefabBalle: {fileID: 0}
+  balleVitesse: 0
+  cibles: []
+  arme1: {fileID: 5935804541791168582, guid: cf50c46c97c918a458db521d36461a44, type: 3}
+  arme2: {fileID: 9121133296249417284, guid: f1329e7580ae68f45adf3f9b9c6c4560, type: 3}
 --- !u!1 &2159421389986698214
 GameObject:
   m_ObjectHideFlags: 0

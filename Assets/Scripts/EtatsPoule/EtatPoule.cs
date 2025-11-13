@@ -7,7 +7,7 @@ public abstract class EtatPoule : MonoBehaviour
         Debug.Log($"Poule entre dans l'état {this.GetType().Name}");
     }
 
-    public abstract PouleTourelle ExecuterEtat(PouleTourelle poule);
+    public abstract EtatPoule ExecuterEtat(PouleTourelle poule);
 
     // Update is called once per frame
     public virtual void SortirEtat(PouleTourelle poule)

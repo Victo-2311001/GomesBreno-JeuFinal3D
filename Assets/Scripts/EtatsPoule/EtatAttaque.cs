@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class EtatAttaque : EtatPoule
 {
-    public override PouleTourelle ExecuterEtat(PouleTourelle poule)
+    public override EtatPoule ExecuterEtat(PouleTourelle poule)
     {
-        monstre.
+        poule.DemarrerTire();
+
+        return this;
     }
 }
